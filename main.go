@@ -1,7 +1,20 @@
 package main
 
-import "fmt"
+import (
+	"fmt"
+	"github.com/HadesTso/new.hadestso.top/framework"
+	"net/http"
+)
 
 func main() {
-    fmt.Println("Hello World")
+	core := framework.NewCore()
+	RegisterRouter(core)
+	server := &http.Server{
+		Handler: core,
+		Addr:    ":8080",
+	}
+
+	if err := server.ListenAndServe(); err != nil {
+		fmt.Println(err)
+	}
 }

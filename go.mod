@@ -1,3 +1,3 @@
-module new.hadestso.top
+module github.com/HadesTso/new.hadestso.top
 
-go 1.19
+go 1.21.1
